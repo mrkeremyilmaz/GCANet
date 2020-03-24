@@ -57,17 +57,3 @@ def remove_rain_haze(img_path, task, net, opt):
         out_img_data = pred.data[0].cpu().float().round().clamp(0, 255)
     out_img = Image.fromarray(out_img_data.numpy().astype(np.uint8).transpose(1, 2, 0))
     return out_img
-
-img_path = "D:\Bilkent Fall-2019\CS491\RainRemoval\GCANet\input\haze1.jpeg"
-h_net, h_opt = load_model("dehaze")
-r_net, r_opt = load_model("derain")
-out_img = remove_rain_haze(img_path, "dehaze", h_net, h_opt)
-out_img.show()
-out_img = remove_rain_haze(img_path, "derain", r_net, r_opt)
-out_img.show()
-    
-
-
-
-
-
