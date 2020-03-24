@@ -6,7 +6,7 @@ from PIL import Image
 import torch
 from torch.autograd import Variable
 
-from utils import make_dataset, edge_compute
+from .utils import make_dataset, edge_compute
 
 class ModelProp:
     def __init__(self, task):
@@ -26,7 +26,7 @@ def load_model(task):
     else:
         print('network structure %s not supported' % opt.network)
         raise ValueError
-    
+
     if opt.use_cuda:
         torch.cuda.set_device(opt.gpu_id)
         net.cuda()
