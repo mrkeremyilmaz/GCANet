@@ -21,7 +21,7 @@ def load_model(task):
     opt = ModelProp(task)
     
     if opt.network == 'GCANet':
-        from GCANet import GCANet
+        from .GCANet import GCANet
         net = GCANet(in_c=4, out_c=3, only_residual=opt.only_residual)
     else:
         print('network structure %s not supported' % opt.network)
