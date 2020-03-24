@@ -14,7 +14,8 @@ class ModelProp:
         self.task = task
         self.gpu_id = 0 
         self.only_residual = self.task == 'dehaze'  
-        self.model = './models/wacv_gcanet_%s.pth' % self.task
+        self.model = '/home/keremyilmazcs/general_photonom_server/photonom-django/photonom/image_operator/operations' \
+                     '/GCANet/models/wacv_gcanet_%s.pth' % self.task
         self.use_cuda = self.gpu_id >= 0
 
 def load_model(task):
